@@ -9,12 +9,12 @@ const arr = syns.filter((syn) => syn.length > 3)[0];
 arr.splice(3);
 arr.push(ant[0]);
 let id = wordData.data[0].meta.id;
-return {arr, id};
+return {arr, id, ant };
 }
-// const data=getWordData('happy')
-// data.then(()=> {
-//   console.log(data);
 
-// })
+const specificData = async (word) => {
+  let result = await getWordData(word);
+  return result;
+}
 
-export default getWordData;
+export default specificData;

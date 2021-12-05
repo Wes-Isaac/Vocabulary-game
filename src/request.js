@@ -17,4 +17,4 @@ return {arr, id};
 
 // })
 
-export default {getWordData};
+export default getWordData;

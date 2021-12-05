@@ -1,5 +1,6 @@
 import './main.css';
 import * as myfun from './request';
+import display from './display';
 
 const {getWordData} = myfun.default;
 
@@ -8,11 +9,11 @@ const player = document.querySelector('.player');
 const div = document.querySelector('.words');
 const game = document.querySelector('.game');
 const nextButton = document.querySelector('.next');
+const score = document.querySelector('.score');
+const startButton = document.querySelector('.start');
+let playerName;
 let counter = 1;
 
-const display = async (word = vocab[0]) => {
-  let result = await getWordData(word);
-  console.log(result);
-}
 
-display('happy');
+
+display(div, vocab[0]);

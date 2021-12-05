@@ -1,11 +1,20 @@
-const getWordData = (word) => {
+import axios from 'axios';
+
+const getWordData = async (word) => {
 let wordData;
 wordData =  await axios.get(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=406393ea-9e45-49ea-b312-be15890f03f0`);
-const syns = cast.data[0].meta.syns;
-ant = cast.data[0].meta.ants[0];
+const syns = wordData.data[0].meta.syns;
+const ant = wordData.data[0].meta.ants[0];
 const arr = syns.filter((syn) => syn.length > 3)[0];
 arr.splice(3);
 arr.push(ant[0]);
-let id = cast.data[0].meta.id;
+let id = wordData.data[0].meta.id;
 return {arr, id};
 }
+// const data=getWordData('happy')
+// data.then(()=> {
+//   console.log(data);
+
+// })
+
+export default {getWordData};

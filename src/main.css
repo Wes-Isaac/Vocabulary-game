@@ -1,0 +1,15 @@
+.words {
+  background: #aee16f;
+}
+
+.error {
+  background: #ee2222;
+}
+
+.success {
+  background: #09ff00;
+}
+
+.none {
+  display: none;
+}

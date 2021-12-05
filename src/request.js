@@ -17,4 +17,11 @@ const specificData = async (word) => {
   return result;
 }
 
-export default specificData;
+const postScore = async (name, score) => {
+  const info = await axios.post('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/TjsAItrAJ8A8sdkgVz95/scores', {
+    user: name,
+    score: score
+  });
+}
+
+export {specificData, postScore};

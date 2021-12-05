@@ -1,4 +1,4 @@
-import specificData from './request';
+import {specificData} from './request';
 
 const display = async (div, word) => {
   let result = await specificData(word);

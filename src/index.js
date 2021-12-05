@@ -1,6 +1,6 @@
 import './main.css';
 import display from './display';
-import specificData from './request';
+import {specificData, postScore } from './request';
 
 const vocab = ['sour','abhor','sharp','gentle','cruel','love', 'hate','happy','sad'];
 const player = document.querySelector('.player');
@@ -42,7 +42,7 @@ const handleClick = async (e) => {
   } else if(off) {
     e.target.innerHTML = 'Submit Score';
     div.innerHTML = `Thanks for playing this game!!!! You Scored ${score.value} / ${vocab.length}`;
-    // postScore(playerName, score.value);
+    postScore(playerName, score.value);
 
   }
 }

@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <title>Vocabulary Game</title>
 </head>
 <body>
+  <nav class="nav">
+    <a href="#" class="navlink">Vocabulary Game</a>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Leaderboard</a>
+    </div>
+  </nav>
     <main>
-        <section>
+        <section id="gameplay">
+          <div class="error"></div>
           <div class="player">
             <form action="">
               <input type="text" class="name" placeholder="Player's name">
               <button type="submit" class="start">Start</button>
             </form>
           </div>
+          <div class="game none">
+            
+            <input type="number" class="score" name="" id="" value="0" readonly>
+            <div class="words"></div>
+            <button class="next">NEXT</button>
+          </div>
         </section>
-        <div class="game none">
-          
-          <input type="number" class="score" name="" id="" value="0" readonly>
-          <div class="words"></div>
-          <button class="next">NEXT</button>
-        </div>
-        
+
+        <section id="leaderboard" class="none">
+          <h1>Leaderboard</h1>
+          <div class="leaderboard"></div>
+        </section>
       </main>
 
      

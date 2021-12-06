@@ -24,4 +24,11 @@ const postScore = async (name, score) => {
   });
 }
 
-export {specificData, postScore};
+const getLeaderboard = async () => {
+  const leaderboard = await axios.get('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/TjsAItrAJ8A8sdkgVz95/scores');
+  const board = leaderboard.data.result;
+  board.sort((x, y) => y.score - x.score);
+  return board;
+}
+
+export {specificData, postScore, getLeaderboard };

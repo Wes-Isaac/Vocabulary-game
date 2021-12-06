@@ -13,3 +13,24 @@
 .none {
   display: none;
 }
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav > a,
+.nav > div > a {
+  text-decoration: none;
+  color: #292525;
+  font-size: 1.3rem;
+  margin: 5px;
+}
+
+section {
+  width: 80%;
+  margin: auto;
+  padding: 2rem 0;
+}
+

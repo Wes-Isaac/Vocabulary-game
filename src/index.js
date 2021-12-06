@@ -1,14 +1,17 @@
 import './main.css';
 import display from './display';
-import {specificData, postScore } from './request';
+import {specificData, postScore, getLeaderboard } from './request';
+import errorMessage from './errorMessage';
 
 const vocab = ['sour','abhor','sharp','gentle','cruel','love', 'hate','happy','sad'];
+vocab.sort(() => Math.random() - 0.5);
 const player = document.querySelector('.player');
 const div = document.querySelector('.words');
 const game = document.querySelector('.game');
 const nextButton = document.querySelector('.next');
 const score = document.querySelector('.score');
 const startButton = document.querySelector('.start');
+const leaderboard = document.querySelector('.leaderboard');
 let playerName;
 let counter = 2;
 let antonym;
@@ -43,7 +46,8 @@ const handleClick = async (e) => {
     e.target.innerHTML = 'Submit Score';
     div.innerHTML = `Thanks for playing this game!!!! You Scored ${score.value} / ${vocab.length}`;
     postScore(playerName, score.value);
-
+  }else {
+    errorMessage('Please select your answer!!!')
   }
 }
 
@@ -56,7 +60,7 @@ startButton.addEventListener('click', (e)=> {
     game.classList.remove('none');
     player.classList.add('none');
   } else {
-    alert('Input a valid name')
+    errorMessage('Input a valid name')
   }
 })
 
@@ -87,3 +91,25 @@ nextButton.addEventListener('click',  (e) => {
   handleClick(e);
 });
 
+document.addEventListener('click', async (e) => {
+  if(e.target.innerHTML ==='Leaderboard') {
+    console.log('HAPPY')
+    document.querySelector('#gameplay').classList.add('none')
+    document.querySelector('#leaderboard').classList.remove('none')
+    const leader = await getLeaderboard();
+    console.log(leader);
+    leaderboard.innerHTML = '<p><span>Name<span> <span>Score<span></p>';
+    leader.forEach((lead) => {
+      leaderboard.innerHTML += `
+      <div>
+      <p><span>${lead.user}<span> <span>${lead.score}<span></p>
+
+      </div>`
+
+    })
+  } else if(e.target.innerHTML ==='Home') {
+    console.log('NOT HAPPY');
+    document.querySelector('#gameplay').classList.remove('none')
+    document.querySelector('#leaderboard').classList.add('none');
+  }
+})

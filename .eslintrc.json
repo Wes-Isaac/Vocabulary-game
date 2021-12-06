@@ -20,6 +20,8 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "src/request.js",
+    "webpack.config.js"
   ]
 }

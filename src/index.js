@@ -1,9 +1,19 @@
 import './main.css';
-import display from './display';
-import {specificData, postScore, getLeaderboard } from './request';
-import errorMessage from './errorMessage';
+import display from './display.js';
+import { specificData, postScore, getLeaderboard } from './request.js';
+import errorMessage from './errorMessage.js';
 
-const vocab = ['sour','abhor','sharp','gentle','cruel','love', 'hate','happy','sad'];
+const vocab = [
+  'sour',
+  'abhor',
+  'sharp',
+  'gentle',
+  'cruel',
+  'love',
+  'hate',
+  'happy',
+  'sad',
+];
 vocab.sort(() => Math.random() - 0.5);
 const player = document.querySelector('.player');
 const div = document.querySelector('.words');
@@ -16,7 +26,7 @@ let playerName;
 let counter = 2;
 let antonym;
 
- display(div, vocab[0]).then((ant) => {
+display(div, vocab[0]).then((ant) => {
   antonym = ant;
 });
 
@@ -24,78 +34,73 @@ const handleClick = async (e) => {
   const input = game.querySelectorAll('input');
   let off = 0;
   input.forEach((val) => {
-    console.log(val.value)
-    val.value === 'off'? off++ : off;
-  })
-  console.log(off)
-  // return; function
+    if (val.value === 'off') {
+      off += 1;
+    }
+  });
 
-  if(off && counter <= vocab.length) {
-
+  if (off && counter <= vocab.length) {
     div.classList.remove('choosen');
     div.innerHTML = '';
-    let result = await specificData(vocab[counter - 1]);
-  const { arr:choices, id, ant } = result;
-  choices.sort(() => Math.random() - 0.5);
-  antonym = ant;
-  div.innerHTML = `<h1>${counter}. ${id}</h1>`;
-  choices.forEach((choice) => {
-    div.innerHTML += `<div><input type="radio" id="${choice}" name="word" ><p>${choice}</p></div>`
-  });
-    counter++;
-  } else if(off) {
+    const result = await specificData(vocab[counter - 1]);
+    const { arr: choices, id, ant } = result;
+    choices.sort(() => Math.random() - 0.5);
+    antonym = ant;
+    div.innerHTML = `<h1>${counter}. ${id}</h1>`;
+    choices.forEach((choice) => {
+      div.innerHTML += `<div><input type="radio" id="${choice}" name="word" ><p>${choice}</p></div>`;
+    });
+    counter += 1;
+  } else if (off) {
     e.target.classList.add('none');
     div.innerHTML = `<p class="final">Thanks for playing this game!!!! You Scored ${score.value} / ${vocab.length}</p>`;
     postScore(playerName, score.value);
-  }else {
-    errorMessage('Please select your answer!!!')
+  } else {
+    errorMessage('Please select your answer!!!');
   }
-}
+};
 
-startButton.addEventListener('click', (e)=> {
+startButton.addEventListener('click', (e) => {
   e.preventDefault();
-   playerName = e.target.previousElementSibling.value;
-   console.log(playerName);
+  playerName = e.target.previousElementSibling.value;
 
-  if(playerName) {
+  if (playerName) {
     game.classList.remove('none');
     player.classList.add('none');
   } else {
-    errorMessage('Input a valid name')
+    errorMessage('Input a valid name');
   }
-})
+});
 
 div.addEventListener('click', (e) => {
-  if(!div.classList.contains('choosen')) {
+  if (!div.classList.contains('choosen')) {
     const input = document.querySelectorAll('input');
-    e.target.value= 'off';
-    if(e.target.id && e.target.id !== antonym[0]) {
+    e.target.value = 'off';
+    if (e.target.id && e.target.id !== antonym[0]) {
       div.classList.add('choosen');
-      console.log(e.target.id);
       e.target.nextSibling.classList.add('error');
 
       input.forEach((i) => {
-        if(i.id === antonym[0]) {
+        if (i.id === antonym[0]) {
           i.nextSibling.classList.add('success');
         }
-      })
-    } else if(e.target.id === antonym[0]) {
-      score.value++;
+      });
+    } else if (e.target.id === antonym[0]) {
+      score.value += 1;
       e.target.nextSibling.classList.add('success');
       div.classList.add('choosen');
-
     }
   }
 });
 
-nextButton.addEventListener('click',  (e) => {
+nextButton.addEventListener('click', (e) => {
   handleClick(e);
 });
 
 document.addEventListener('click', async (e) => {
-  if(e.target.innerHTML ==='Leaderboard') {
-    document.querySelector('#gameplay').classList.add('none')
-    document.querySelector('#leaderboard').classList.remove('none')
+  if (e.target.innerHTML === 'Leaderboard') {
+    document.querySelector('#gameplay').classList.add('none');
+    document.querySelector('#leaderboard').classList.remove('none');
     const leader = await getLeaderboard();
     leaderboard.innerHTML = '<div><h3>Name</h3> <h3>Score</h3></div>';
     leader.forEach((lead) => {
@@ -103,12 +108,10 @@ document.addEventListener('click', async (e) => {
       <div>
       <p>${lead.user}</p> 
       <p>${lead.score}</p>
-      </div>`
-
-    })
-  } else if(e.target.innerHTML ==='Home') {
-    console.log('NOT HAPPY');
-    document.querySelector('#gameplay').classList.remove('none')
+      </div>`;
+    });
+  } else if (e.target.innerHTML === 'Home') {
+    document.querySelector('#gameplay').classList.remove('none');
     document.querySelector('#leaderboard').classList.add('none');
   }
-})
+});

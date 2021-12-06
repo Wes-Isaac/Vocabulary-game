@@ -4,12 +4,12 @@
 }
 
 .error {
-  background: #ee2222;
+  background: #e22;
   border-radius: 2px;
 }
 
 .error-message {
-  background: #ee2222;
+  background: #e22;
   font-size: 1.2rem;
   text-align: center;
   width: 400px;
@@ -43,7 +43,6 @@ section {
   padding: 2rem 0;
 }
 
-
 .player form {
   display: flex;
   flex-direction: column;
@@ -51,7 +50,7 @@ section {
   margin: auto;
 }
 
- input {
+input {
   padding: 8px;
   margin: 10px 0;
 }
@@ -96,6 +95,14 @@ section {
   width: 100%;
 }
 
+.leaderboard div {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  width: 100%;
+  justify-content: space-around;
+}
+
 .words div:last-child,
 .leaderboard div:last-child {
   border-bottom: 1px solid rgb(43, 42, 42);
@@ -103,7 +110,6 @@ section {
 
 .words input {
   margin-right: 8px;
-  
 }
 
 .words p {
@@ -129,15 +135,7 @@ section {
 
 #leaderboard h1 {
   font-size: 2rem;
-  margin: 10px 0; 
-}
-
-.leaderboard div {
-  display: flex;
-  flex-direction: row;
-  padding: 5px;
-  width: 100%;
-  justify-content: space-around;
+  margin: 10px 0;
 }
 
 .leaderboard div p,

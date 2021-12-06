@@ -1,17 +1,26 @@
-.words {
-  background: #aee16f;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .error {
   background: #ee2222;
+  border-radius: 2px;
+}
+
+.error-message {
+  background: #ee2222;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 400px;
+  margin: auto;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .success {
   background: #09ff00;
-}
-
-.none {
-  display: none;
+  border-radius: 2px;
 }
 
 .nav {
@@ -34,3 +43,113 @@ section {
   padding: 2rem 0;
 }
 
+
+.player form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+ input {
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.start-button {
+  margin: 10px auto;
+  width: 150px;
+  padding: 8px;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 8px;
+  background: rgb(253, 80, 80);
+  transition: all 300ms ease-in-out;
+}
+
+.start-button:hover {
+  background: transparent;
+  border: black 0.5px solid;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.words {
+  padding: 1rem;
+}
+
+.words h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.words div,
+.leaderboard > div {
+  padding: 10px;
+  border: 1px solid rgb(43, 42, 42);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.words div:last-child,
+.leaderboard div:last-child {
+  border-bottom: 1px solid rgb(43, 42, 42);
+}
+
+.words input {
+  margin-right: 8px;
+  
+}
+
+.words p {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.next {
+  width: 100px;
+  padding: 8px;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 8px;
+  background: rgb(253, 80, 80);
+  transition: all 300ms ease-in-out;
+}
+
+.next:hover {
+  background: transparent;
+  border: black 0.5px solid;
+}
+
+#leaderboard h1 {
+  font-size: 2rem;
+  margin: 10px 0; 
+}
+
+.leaderboard div {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.leaderboard div p,
+.leaderboard div h3 {
+  text-align: start;
+  width: 50%;
+}
+
+.final {
+  font-size: 1.5rem;
+}
+
+.none {
+  display: none;
+}

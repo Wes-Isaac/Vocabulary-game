@@ -15,16 +15,18 @@
   </nav>
     <main>
         <section id="gameplay">
-          <div class="error"></div>
+          <div class="error-message none"></div>
           <div class="player">
             <form action="">
               <input type="text" class="name" placeholder="Player's name">
-              <button type="submit" class="start">Start</button>
+              <button type="submit" class="start start-button">Start</button>
             </form>
           </div>
           <div class="game none">
-            
-            <input type="number" class="score" name="" id="" value="0" readonly>
+            <div>
+              <label>Score:</label>
+              <input type="number" class="score" value="0" readonly>
+            </div>
             <div class="words"></div>
             <button class="next">NEXT</button>
           </div>

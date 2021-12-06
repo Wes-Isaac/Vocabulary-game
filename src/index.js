@@ -36,15 +36,16 @@ const handleClick = async (e) => {
     div.innerHTML = '';
     let result = await specificData(vocab[counter - 1]);
   const { arr:choices, id, ant } = result;
+  choices.sort(() => Math.random() - 0.5);
   antonym = ant;
   div.innerHTML = `<h1>${counter}. ${id}</h1>`;
   choices.forEach((choice) => {
-    div.innerHTML += `<input type="radio" id="${choice}" name="word" ><label for="">${choice}</label><br>`
+    div.innerHTML += `<div><input type="radio" id="${choice}" name="word" ><p>${choice}</p></div>`
   });
     counter++;
   } else if(off) {
-    e.target.innerHTML = 'Submit Score';
-    div.innerHTML = `Thanks for playing this game!!!! You Scored ${score.value} / ${vocab.length}`;
+    e.target.classList.add('none');
+    div.innerHTML = `<p class="final">Thanks for playing this game!!!! You Scored ${score.value} / ${vocab.length}</p>`;
     postScore(playerName, score.value);
   }else {
     errorMessage('Please select your answer!!!')
@@ -93,17 +94,15 @@ nextButton.addEventListener('click',  (e) => {
 
 document.addEventListener('click', async (e) => {
   if(e.target.innerHTML ==='Leaderboard') {
-    console.log('HAPPY')
     document.querySelector('#gameplay').classList.add('none')
     document.querySelector('#leaderboard').classList.remove('none')
     const leader = await getLeaderboard();
-    console.log(leader);
-    leaderboard.innerHTML = '<p><span>Name<span> <span>Score<span></p>';
+    leaderboard.innerHTML = '<div><h3>Name</h3> <h3>Score</h3></div>';
     leader.forEach((lead) => {
       leaderboard.innerHTML += `
       <div>
-      <p><span>${lead.user}<span> <span>${lead.score}<span></p>
-
+      <p>${lead.user}</p> 
+      <p>${lead.score}</p>
       </div>`
 
     })

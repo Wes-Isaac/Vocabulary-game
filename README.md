@@ -1,65 +1,55 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Vocabulary Game
 
-> One paragraph statement about the project.
+> A fun vocabulary game where you can test how you're doing and compare yourself with others in the leaderboard.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
+- [Meriam webster dictionary API](https://dictionaryapi.com/)
+- [Leaderboard API](https://www.notion.so/microverse/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://wes-isaac.github.io/Vocabulary-game/)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+Clone the repo to your local machine. Run this command
 
-### Setup
+git clone https://github.com/Wes-Isaac/Vocabulary-game.git
 
-### Install
+cd Vocabulary-game
 
-### Usage
+run the command 'npm install'
 
-### Run tests
+Next, run 'npm start' which will run the app in the development mode.
 
-### Deployment
+Open http://localhost:3000 to view it in the browser.
 
+## Author
 
+👤 **Yishak**
 
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Yishak ,Wes-Isaac](https://github.com/Wes-Isaac)
+- LinkedIn: [@Yishak](https://www.linkedin.com/in/yishak-wesego-b404851a7/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Wes-Isaac/To-do-list/issues).
 
 ## Show your support
 

@@ -157,20 +157,20 @@ input {
     display: block;
     border: 1px solid black;
   }
+
   .nav > a,
-.nav > div > a {
-  display: block;
-  width: 100%;
-  margin: 10px auto;
-  text-align: center;
-}
+  .nav > div > a {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
 
-section {
-  width: inherit;
-}
+  section {
+    width: inherit;
+  }
 
-.player form {
-  width: inherit;
-}
-  
+  .player form {
+    width: inherit;
+  }
 }

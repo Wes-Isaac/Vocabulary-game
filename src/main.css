@@ -12,7 +12,7 @@
   background: #e22;
   font-size: 1.2rem;
   text-align: center;
-  width: 400px;
+  max-width: 400px;
   margin: auto;
   padding: 8px;
   border-radius: 5px;
@@ -150,4 +150,27 @@ input {
 
 .none {
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    display: block;
+    border: 1px solid black;
+  }
+  .nav > a,
+.nav > div > a {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+section {
+  width: inherit;
+}
+
+.player form {
+  width: inherit;
+}
+  
 }

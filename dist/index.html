@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <title>Vocabulary Game</title>
 <script defer src="index.bundle.js"></script></head>
 <body>
-    <h1 class="title">Leaderboard</h1>
- <main>
-     <section class="section">
-        <div class="section-title">
-            <h2>Refresh scores</h2>
-            <button class="refresh">Refresh</button>
-        </div>
-        <div class="scores">
-            <ul class="list"></ul>
-        </div>
-     </section>
-     <section class="section">
-         <h2 class="form-title">Add your score</h2>
-         <form>
-             <input type="text" class="name" placeholder="Your name" required>
-             <input type="text" class="score" placeholder="Your score" required>
-             <button class="submit" type="submit">Submit</button>
-         </form>
-     </section>
- </main>
+  <nav class="nav">
+    <a href="#" class="navlink">Vocabulary Game</a>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Leaderboard</a>
+    </div>
+  </nav>
+    <main>
+        <section id="gameplay">
+          <div class="error-message none"></div>
+          <div class="player">
+            <form action="">
+              <input type="text" class="name" placeholder="Player's name">
+              <button type="submit" class="start start-button">Start</button>
+            </form>
+          </div>
+          <div class="game none">
+            <div>
+              <label>Score:</label>
+              <input type="number" class="score" value="0" readonly>
+            </div>
+            <div class="words"></div>
+            <button class="next">NEXT</button>
+          </div>
+        </section>
+
+        <section id="leaderboard" class="none">
+          <h1>Leaderboard</h1>
+          <div class="leaderboard"></div>
+        </section>
+      </main>
+
+     
 </body>
 </html>

@@ -86,7 +86,8 @@ div.addEventListener('click', (e) => {
         }
       });
     } else if (e.target.id === antonym[0]) {
-      score.value += 1;
+      // eslint-disable-next-line
+      score.value++;
       e.target.nextSibling.classList.add('success');
       div.classList.add('choosen');
     }

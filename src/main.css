@@ -173,4 +173,9 @@ input {
   .player form {
     width: inherit;
   }
+
+  .name {
+    min-width: 90%;
+    margin: 10px auto;
+  }
 }

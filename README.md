@@ -41,6 +41,7 @@ Open http://localhost:3000 to view it in the browser.
 ## Author
 
 👤 **Yishak**
+    **wengel**
 
 - GitHub: [Yishak ,Wes-Isaac](https://github.com/Wes-Isaac)
 - LinkedIn: [@Yishak](https://www.linkedin.com/in/yishak-wesego-b404851a7/)
